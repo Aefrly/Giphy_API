@@ -15,6 +15,13 @@ async function getGif() {
     const url = gif.images.original.url; //Get the url of the original image
     images_url.push(url); //Add the url to the array
   }
-  console.log(images_url);
+
+  const gifContainer = document.querySelector("#gif-container");
+
+  for (let i = 0; i < images_url.length; i++) {
+      gifContainer.innerHTML += `<img src="${images_url[i]}" class = "col-3 mb-3" alt="gif image">`;
+    }
 }
-getGif();
+
+const button = document.querySelector("#fetch-gif-btn");
+button.addEventListener("click", getGif); 
