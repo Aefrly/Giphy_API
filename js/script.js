@@ -5,7 +5,16 @@ const endpoint = "https://api.giphy.com/v1/gifs/search?api_key=h0ZNqgdqFrKxlgItu
 async function getGif() {
   const response = await fetch(endpoint);
   const data = await response.json();
-  const images_url = data[0].url;
+
+  //Make an empty array to store image URLs
+  const images_url = [];
+
+  //Loop through each GIF 
+  for (let i = 0; i < data.data.length; i++) {
+    const gif = data.data[i];
+    const url = gif.images.original.url; //Get the url of the original image
+    images_url.push(url); //Add the url to the array
+  }
   console.log(images_url);
   // Update the DOM with the dog fact
   //const output = document.getElementById("gif"); 
