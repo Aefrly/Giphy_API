@@ -5,14 +5,14 @@ const endpoint = "https://api.giphy.com/v1/gifs/search?api_key=h0ZNqgdqFrKxlgItu
 async function getGif() {
   const response = await fetch(endpoint);
   const data = await response.json();
-  const fact = data.facts[0];
-  
+  const images_url = data[0].url;
+  console.log(images_url);
   // Update the DOM with the dog fact
-  const output = document.getElementById("gif"); 
-  output.src = fact;
-  }
+  //const output = document.getElementById("gif"); 
+  //output.src = images_url;
+}
 
-const button = document.getElementById('fetch-gif-btn');
-button.addEventListener('click', function() {
-    getGif();
-});
+//const button = document.getElementById('fetch-gif-btn');
+//button.addEventListener('click', function() {
+  //  getGif();
+//});
