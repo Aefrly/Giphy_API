@@ -16,3 +16,4 @@ async function getGif() {
 //button.addEventListener('click', function() {
   //  getGif();
 //});
+getGif();
