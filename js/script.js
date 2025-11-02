@@ -1,8 +1,13 @@
 console.log("script.js loaded");
 
-const endpoint = "https://api.giphy.com/v1/gifs/search?api_key=h0ZNqgdqFrKxlgItueQRwqslfTq0lSEU&q=dogs&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips";
-
 async function getGif() {
+  const searchInput = document.querySelector("#search-input"); //Get the input field
+
+  const searchTerm = searchInput.value; //Get the value from the input field
+
+  //Update the endpoint with the search term
+  const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=h0ZNqgdqFrKxlgItueQRwqslfTq0lSEU&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`;
+  
   const response = await fetch(endpoint);
   const data = await response.json();
 
