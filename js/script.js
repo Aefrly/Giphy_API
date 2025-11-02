@@ -8,8 +8,8 @@ async function getGif() {
   const fact = data.facts[0];
   
   // Update the DOM with the dog fact
-  const output = document.getElementById("dog-fact-output"); 
-  output.textContent = fact;
+  const output = document.getElementById("gif"); 
+  output.src = fact;
   }
 
 const button = document.getElementById('fetch-gif-btn');
