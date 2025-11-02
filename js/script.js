@@ -16,13 +16,5 @@ async function getGif() {
     images_url.push(url); //Add the url to the array
   }
   console.log(images_url);
-  // Update the DOM with the dog fact
-  //const output = document.getElementById("gif"); 
-  //output.src = images_url;
 }
-
-//const button = document.getElementById('fetch-gif-btn');
-//button.addEventListener('click', function() {
-  //  getGif();
-//});
 getGif();
